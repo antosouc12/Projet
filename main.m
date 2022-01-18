@@ -7,8 +7,8 @@ theta=300;  %L'angle de placement de la source
 
 %% Initialisation des matrices 
 
-C=[1 sqrt(2) 0 sqrt(2) 0;        %%
-   1 sqrt(2)/2 sqrt(2)/2 0 sqrt(2);
+C=[1 sqrt(2) 0 sqrt(2) 0;        % C est la matrice harmoniques cylindriques qui sont fonctions des angels theta correspondant a la posistion des haut-parleurs 
+   1 sqrt(2)/2 sqrt(2)/2 0 sqrt(2); % et elle contient les gains correspondants aux harmoniques d'ordre 0, 1 et 2 calculés pour les 8 directions des haut-parleurs 
    1 0 sqrt(2) -1*sqrt(2) 0;
    1 -1*sqrt(2)/2 sqrt(2)/2 0 -1*sqrt(2);
    1 -1*sqrt(2) 0 sqrt(2) 0 ;
@@ -17,7 +17,7 @@ C=[1 sqrt(2) 0 sqrt(2) 0;        %%
    1 sqrt(2)/2 -1*sqrt(2)/2 0 -1*sqrt(2)];
 
 
-Y=[1;          %% 
+Y=[1;          %% Y contient les fonctions harmoniques sphérique définissant la base orthonormée du champ de représentation 
    sqrt(2)*cos(a*theta);
    sqrt(2)*sin(a*theta);
    sqrt(2)*cos(2*a*theta);
