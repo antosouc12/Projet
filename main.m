@@ -17,7 +17,7 @@ C=[1 sqrt(2) 0 sqrt(2) 0;        % C est la matrice harmoniques cylindriques qui
    1 sqrt(2)/2 -1*sqrt(2)/2 0 -1*sqrt(2)];
 
 
-Y=[1;          %% Y contient les fonctions harmoniques sphérique définissant la base orthonormée du champ de représentation 
+Y=[1;       %% Y contient les fonctions harmoniques sphérique définissant la base orthonormée du champ de représentation 
    sqrt(2)*cos(a*theta);
    sqrt(2)*sin(a*theta);
    sqrt(2)*cos(2*a*theta);
@@ -38,21 +38,21 @@ s=upsample441(s); % Certains extraits audios que l'on a utilisés etaient échan
 
 %% Synthèse 
 
-G=C*Y/8;  %Création des pistes audios pour les 8 enceintes 
-Sn=G*s'; %Les enceintes sont ordonnées dans le sens Trigonométrique. L'enceinte numéro 1 étant devant l'auditeur et l'enceinte numéro 2 étant à la gauche de la première 
+G=C*Y/8;  % Création des pistes audios pour les 8 enceintes 
+Sn=G*s'; % Les enceintes sont ordonnées dans le sens Trigonométrique. L'enceinte numéro 1 étant devant l'auditeur et l'enceinte numéro 2 étant à la gauche de la première 
 
-%%
+%% Mouvement restreint
 
 Sn=mouv135225(s',1); %% Cette fonction crée les 8 pistes pour les 8 enceintes pour donner l'impression que la source se déplace d'un angle de 135° vers 225°
 
-%% 
+%% Mouvement 360
 
 Sn=mouv(w480,1); %% Cette fonction crée les 8 pistes pour les 8 enceintes pour donner l'impression que la source se déplace d'un angle de 0° vers 360°
 
 
 %% Out
 
-%On ecrit les sorties contenues dans Sn dans des fichiers .wav pour les jouers depuis un autre logiciel.
+%O n ecrit les sorties contenues dans Sn dans des fichiers .wav pour les jouers depuis un autre logiciel.
 
 audiowrite('Carsorite0.wav',Sn(1,:),48000);
 audiowrite('Carsorite45.wav',Sn(2,:),48000);
