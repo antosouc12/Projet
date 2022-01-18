@@ -10,6 +10,8 @@
 
 -Création des cables et enceintes / Carte son
 
+-Cablage virtuel
+
 -Ecriture du Code Matlab 
 
 -Tests 
@@ -39,7 +41,7 @@ Une spécificité de ce projet est de vouloir implémenter ce système en temps 
 
 Pendant ce projet, nous devions donc faire un état de l'art de l'ambisonique, mettre en place le matériel pour avoir un système ambisonique d'ordre 2, coder les algoirthmes nécessaires et gérer la connectique ordinateur/enceintes.
 
-## Etat de lScreenshot from 2022-01-18 14-27-28'art 
+## Etat de l'art
 
 Pour cette partie, Mr.Papazoglou nous a fourni avec 7 documents PDF qui présentent les différentes technologies pour la spatialisation du son. Pour nos travaux, nous nous sommes principalement inspirée des travaux de Stéphanie Salaün sur les systèmes ambisoniques. 
 
@@ -72,9 +74,43 @@ Une autre source potentiel de ce bruit vient peut etre directement de l'amplific
 Le PAM8610 peut délivrer jusqu'à 10 W et est alimenté à 12V.
 
 
-Une fois la salle mise en place, nous devions raccorder les sorties réel de la carte son aux sorties virtuelles de l'ordinateur. Pour cela, nous avons utiliser le logiciel fourni par Focusrite 
+
+## Cablage Virtuel
+
+Une fois la salle mise en place, nous devions raccorder les sorties réel de la carte son aux sorties virtuelles de l'ordinateur. Pour cela, nous avons utiliser le logiciel fourni par Focusrite, Focusrite Control 
+
+![image](https://user-images.githubusercontent.com/56081832/149952667-b9a619b0-5740-4ff3-b24a-8cf247c678c3.png)
+
+Ce logiciel nous permet de faire les cablages dans la carte son.
+
+![image](https://user-images.githubusercontent.com/56081832/149952923-3bf578c6-10d1-45f0-b6fd-a7367962b7fa.png)
+
+Vu que nous voulons commander chaque haut-parleur comme une source mono, nous devons en premier rendre chaque sortie indépendante de l'autre.
+
+![image](https://user-images.githubusercontent.com/56081832/149953096-aca510ac-cf14-48ff-8abb-8e44e5873ad4.png)
+
+Ensuite, nous devons connecter la sorite virtuelle numéro i à la sortie réel numéro i. 
+
+Après avoir paramétré l'interface de la carte son, nous devons paramétré les connexions interne a l'ordinateur. Pour cela, nous avons pensé à utiliser QJack. Ce logiciel permet de gérer les connexions interne de l'ordinateur. Il agit en tant qu'interface entre ALSA et les clients/logiciels qui veulent jouer de l'audio:
+
+![image](https://user-images.githubusercontent.com/56081832/149956091-cf1a397e-f1b5-4aa9-a6f3-9a87504d587d.png)
+
+![image](https://user-images.githubusercontent.com/56081832/149954973-824127b2-bf11-4dba-b94e-39ea4fc42a8a.png)
+
+![image](https://user-images.githubusercontent.com/56081832/149955153-3c9654d5-1a9a-4355-b926-a7b1128e73d7.png)
+
+QJack nous permet aussi de régler la fréquence d'échantillonnage des extraits ou de changer la taille des buffers utilisés, mais nous n'avons pas vraiment utilisée cette fonctionnalité.
+
+Pour obtenir les Outputs Port "PulseAudio Jack Sink", il faut faire attention de bien installer le module Jack pour PulseAudio. Ces output ports sont les sorties virtuelles de l'ordinateur que l'on connecte aux entrées virtuels de la carte son.
+
+Nous avons aussi installé d'autre logiciels qui facilite l'utilisation de QJack tels que Patchage et Calf Plugin:
+
+Patchage:
+![image](https://user-images.githubusercontent.com/56081832/149957788-2092dd18-cfe0-434c-9fa5-18bd43512745.png)
+
+Calf Plugin:
+![image](https://user-images.githubusercontent.com/56081832/149957865-7e74bca7-5f33-410e-847d-2ba2b5fa3500.png)
 
 
-
-
+A ce stade du projet nous arrivons a connecter un appareil sur tou 
 
