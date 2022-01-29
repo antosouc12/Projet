@@ -112,5 +112,40 @@ Calf Plugin:
 ![image](https://user-images.githubusercontent.com/56081832/149957865-7e74bca7-5f33-410e-847d-2ba2b5fa3500.png)
 
 
-A ce stade du projet nous arrivons a connecter un appareil sur tou 
+Apres la premiere mise en place, nous arrivons a connecter notre telephone via une entree Jack de la carte son vers les enceintes que l'on choisit. Nous n'arrivons pas a sortir du son depuis l'ordinateurs directement. QJack ne nous proposait pas de sorties virtuelles. En effet, lors de la premiere mise en place nous n'avions pas access aux PulseAudio Jack Sink. 
+
+![image](https://user-images.githubusercontent.com/56081832/151679332-384418c3-6dc2-4e24-bd74-5ca54d9ef3f9.png)
+
+Pour obtenir cela, nous devions telecharger et installer le package "Pulse-audio-module-jack". Une fois le module installer, nous pouvions jouer de l'audio venant de l'ordinateur, par exemple, depuis Youtube.
+
+Cependant, nous n'avions que 2 sorties virtuelles, "front-left" et "front-right". Pour notre projet, nous avons besoins de 8 sorties virtuelles. Nous pensons que nous pouvons changer le fichier de configuration de PulseAudio et/ou de Qjack pour obtenir 8 sorties virtuelles mais nous avons decide de proceder differement.
+
+Pour commander independammant chaque enceinte, nous avons decider d'utiliser le logiciel Ardour.
+
+![image](https://user-images.githubusercontent.com/56081832/151679795-ced3977c-250f-42df-a312-3a254e976ebf.png)
+
+![image](https://user-images.githubusercontent.com/56081832/151679789-f29ea3bc-50fc-4d61-a193-7d63c23e6228.png)
+
+Ardour est une plateforme de travail pour audio qui nous permet de d'acceder directement a la carte son. Nous pouvons donc associer une sortie virtuelle par track. Ceci nous permet donc de commander chaque enceinte individuellement.
+
+
+
+
+## Ecriture de code Matlab 
+
+Nous devons maintenant spacialiser notre son. Pour cela, nous avons utilise les equations presentees par Mmd Stephanie Salaun Bertet. 
+Pour spacialiser notre son, nous allons projeter notre son mono sur les harmoniques spheriques. Chaque harmonique represente une direction. Il suffit donc de priviligier une harmonique par rapport a une autre pour spacialiser notre son.
+
+Vu que nous n'allons faire qu'une spacialisation en 2D et non pas en 3D, nous allons porjeter notre son mono sur les harmoniques cylindriques.
+
+Pour faire cela, nous allons appliquer cette formule:
+
+![image](https://user-images.githubusercontent.com/56081832/151680441-bd6fff74-3ac2-482c-a9ee-0870f69bfc8e.png)
+
+avec N le nombre d'enceinte, C la matrice contenant les gains correspondants aux harmoniques cylindriques, Y la matrice contenant les harmoniques cylindriques, S le vecteur contenant les echantillions de l'audio que l'on veut traiter et Sn la matrice contenant les 8 pistes pour chaque enceintes. 
+
+
+
+
+
 
