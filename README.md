@@ -145,6 +145,14 @@ Pour faire cela, nous allons appliquer cette formule:
 avec N le nombre d'enceinte, C la matrice contenant les gains correspondants aux harmoniques cylindriques, Y la matrice contenant les harmoniques cylindriques, S le vecteur contenant les echantillions de l'audio que l'on veut traiter et Sn la matrice contenant les 8 pistes pour chaque enceintes. 
 
 
+Voici la forme d'Y:
+![image](https://user-images.githubusercontent.com/56081832/151681129-e0681e5f-31c1-48ed-b116-b1ee620d43d0.png)
+ avec a une constante permettant la conversion degree vers radian.
+ 
+ Voici la forme de C:
+
+
+
 
 
 
