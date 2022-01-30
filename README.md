@@ -151,6 +151,18 @@ Voici la forme d'Y:
  
  Voici la forme de C:
 
+![image](https://user-images.githubusercontent.com/56081832/151681396-3b056307-bb1e-432e-a20d-4224210b4ed8.png)
+
+On peut generaliser cette formule a l'ordre que l'on veut. Nous avons utiliser un ordre 2. Evidement, plus l'ordre est grand plus la spacialisation est precise, cependant, il faut aussi plus d'enceintes 
+
+Avec ceci nous pouvons ecrire un code matlab qui permet de pre-traiter le signal pour le spacialiser.
+
+Nous importons 1 fichier .wav que nous traitons pour nous sortir 8 fichiers .wav que l'on jouera depuis Ardour.
+
+## Tests 
+
+Comme premier test, nous avons mis en place un systeme HOA d'ordre 1 (dans la matrice Y il n'y a pas les termes en cos(2theta) et sin(2theta)) et il n'y a que 4 enceintes. 
+Lors de ce premier test, nous avons placer un son venant de 30 degree. Nous avons demander a plusieurs personnes d'essayer de placer la source 
 
 
 
