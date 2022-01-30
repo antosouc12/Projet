@@ -18,6 +18,8 @@
 
 -Pour aller plus loin: premier jet code CUDA et portaudio
 
+-Conclusion 
+
 ## Remerciements 
 
 Avant d’ouvrir ce rapport, nous tenons tout d’abord à remercier notre professeur encadrant M. Nicolas Papazoglou qui nous a soutenus et guidés pendant cette période de projet. 
@@ -184,6 +186,6 @@ Cependant, il semble que pour installer PortAudio, il faut desintaller PulseAudi
 On pensait utiliser une time machine pour sauvegarder notre travail jusqu'a la mais nous n'avons pas eu le temps pour faire cela.
 
 
+## Conclusion 
 
-
-
+Pendant ces 4 mois, nous avons reussi a construire un systeme ambisonique d'ordre 2 et de correctement spatiliser un son et de le deplacer de la facon dont on veut.
