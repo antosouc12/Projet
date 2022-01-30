@@ -13,7 +13,7 @@ __host__ int main(float* S,float theta){
     
     float C[]={(float)1,(float)sqrt(2),(float)0,(float)sqrt(2),(float)0,(float)1,(float)1,(float)1,(float)0,(float)sqrt(2),(float)1,(float)0,(float) sqrt(2),(float) -sqrt(2),(float)0,(float)1, (float)-1,(float)sqrt(2),(float)0,(float)-sqrt(2),(float)1,(float)-sqrt(2),(float)0,(float)sqrt(2),(float)0,(float)1,(float)-1,(float)-1,(float)0,(float)sqrt(2),(float)1,(float)0,(float)-sqrt(2),(float)-sqrt(2),(float)0,(float)1,(float)1,(float)-1,(float)0,(float)-sqrt(2)}
 ;
-    float Y[]={ 1.0, (float) sqrt(2)*cos(a*theta),sqrt(2)*sin(a*theta),sqrt(2)*cos(2*a*theta),sqrt(2)*sin(2*a*theta)};
+    float Y[]={ 1.0, sqrt(2)*cos(a*theta),sqrt(2)*sin(a*theta),sqrt(2)*cos(2*a*theta),sqrt(2)*sin(2*a*theta)};
     float* Sn;
 
     float* C_d;
