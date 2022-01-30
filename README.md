@@ -161,9 +161,27 @@ Nous importons 1 fichier .wav que nous traitons pour nous sortir 8 fichiers .wav
 
 ## Tests 
 
-Comme premier test, nous avons mis en place un systeme HOA d'ordre 1 (dans la matrice Y il n'y a pas les termes en cos(2theta) et sin(2theta)) et il n'y a que 4 enceintes. 
-Lors de ce premier test, nous avons placer un son venant de 30 degree. Nous avons demander a plusieurs personnes d'essayer de placer la source 
+Comme premier test, nous avons mis en place un systeme HOA d'ordre 1 (dans la matrice Y il n'y a pas les termes en cos(2theta) et sin(2theta)) et il n'y a que 4 enceintes placees a 0, 90, 180 et 270 degrees. 
+Lors de ce premier test, nous avons placer un son venant de 30 degree. Nous avons demander a plusieurs personnes d'essayer de placer la source. La majorite des participants on reussi a placer la source correctement +/- 10 degrees.
 
+Une fois que nous avions fini la production des 4 dernieres enceintes nous avons pu commencer les tests avec 8 enceintes. Nous avons refait le meme test mais en placant la source a 315 degree. Les participants ont reussi a placer la source correctement a +/- 3 degrees.
+
+Nous avons ajouter au code d'origine pour faire bouger la source de la facon dont on veut.
+
+##  Pour aller plus loin: premier jet code CUDA et portaudio
+
+Nous avons donc reussi a mettre en place un syteme ambisonique d'ordre 2 et de placer une source et la faire deplacer de la facon dont on veut en pretraitant le signal. Le but originelle etant de pouvoir deplacer la source en temps reel en faisant les calculs dans le GPU avec CUDA.
+
+Nous avons ecrit un code CUDA qui permet le traitement du signal pour obtenir les 8 tracks. Pour cela, nous devons ecrire une fonction de multiplication de matrice dans le GPU.
+
+Ce qui pose plus de probleme est la gestion de buffer et l'envoi de ces buffers sur le codec.
+Pour cela, nous pensons utiliser PortAudio.
+
+PortAudio est une library open-source qui permet de jouer et d'enregister de l'audio. Cette library gere les transfers de buffers vers le codec donc nous pensions pouvoir utiliser ceci pour commander nos enceintes via la Scarlett. Il existe deja des fichers code exemple qui permettent de detecter la carte son et le nombre de sorties disponbiles mais aussi des fichiers codes qui permettent d'envoyer les buffers directement au codec
+
+Cependant, il semble que pour installer PortAudio, il faut desintaller PulseAudio. Ne connaissant pas completement les ramifications de desintaller PulseAudio et arrivant a la fin de notre projet nous avons decider de ne pas continuer.
+
+On pensait utiliser une time machine pour sauvegarder notre travail jusqu'a la mais nous n'avons pas eu le temps pour faire cela.
 
 
 
